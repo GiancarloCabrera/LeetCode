@@ -18,40 +18,21 @@
 // THE LIST IS ORGANIZED IN ASCENDING ORDER
 // SO WHAT WE HAVE TO DO IS TO CHECK IS THE NEXT NUMBER IS REPEATED
 var deleteDuplicates = function (head) {
-  console.log(head);
-
-  // for (let i = 0; i < head.length; i++) {
-  //   let current = head[i];
-  //   let next = head[i + 1];
-  //   let second_next = head[i + 2];
-  //   // if both numbers exits lets compare
-  //   if (current && next) {
-  //     console.log(current, next);
-  //     if (current === next) {
-  //       head.splice(i + 1, 1)
-
-  //     }
-  //   }
-  //   console.log(head);
-
-  //   // console.log(head[i]);
-  // }
-
-  let current = 0;
-  let next = current + 1;
-
-  while (next < head.length) {
-    console.log(head[current], head[next]);
-    if (head[current] === head[next]) {
-      head.splice(next, 1);
-      console.log(head);
+  // WE CREATE OUR REPRESENTATION OF THE LIST
+  const dummy = head;
+  // WHILE THERE IS A HEAD AND A NEXT, WE KEEP ITERATING
+  while (head && head.next) {
+    // REMEBER THE LIST IS SORTED, SO IF THERE IS A REPEATED NUMBER, IT WILL BE NEXT 
+    if (head.val === head.next.val) {
+      // SO WE REMOVE THE NEXT NUMBER BY REPLACING IT WITH THE NEXT NEXT
+      head.next = head.next.next;
     } else {
-      current++;
+      // IF THEY ARE NOT THE SAME, WE JUST KEEP MOVING
+      head = head.next;
     }
+    console.log(dummy);
   }
-
-  console.log(head);
-
+  return dummy;
 };
 
 // deleteDuplicates([1, 1, 2])
