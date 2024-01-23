@@ -69,7 +69,7 @@ class LinkedList {
     } else {
       // We put our pointer on the beggining
       let current = this.head;
-      // We dont knwo when it is the final item
+      // We dont know when it is the final item
       // So we iterate while there is a next item
       // That ensures us that once it finishes, current will be at the end pf our list 
       // YOU CANNOT MODIFY THE ACTUAL NODE, YOU HAVE TO BE BEFORE THE ONE YOU WANT TO MODIFY, AND MODIFIY .NEXT
